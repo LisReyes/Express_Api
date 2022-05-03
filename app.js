@@ -34,6 +34,15 @@ app.post('/v1/explorers',(req,res)=>{
     console.log(req.body) //parametros de request    
     res.status(201).json({message: "CREADO! CHECK CHECK"})
 })
+
+//PUT es pra actualizar la informacion 
+app.put('/v1/explorers/:id',(req,res)=>{
+    console.log(`PUT request ${new Date()}`)
+    console.lor(req.body)//parametros para actualizar
+    console.log(req.params.id)//query params
+    res.status(200).json({message: "Actualizado exitosamente"})
+
+})
 //con sto inicializamos la app
 app.listen(port,()=>{
     console.log(`Example app listening on port ${port}`)
