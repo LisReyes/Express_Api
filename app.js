@@ -43,6 +43,14 @@ app.put('/v1/explorers/:id',(req,res)=>{
     res.status(200).json({message: "Actualizado exitosamente"})
 
 })
+
+//DELETE es para borrar informacion
+app.delete('/v1/explorers/:id', (req,res)=>{
+    console.log(`DELE explorers V1 API ${new Date()}`)
+    console.log(`Delete explorer with id ${req.params.id}`)
+    const requestBody = req.body //parametros del cliente
+    res.status(200).json({message: "Borrado exitosamente"})
+})
 //con sto inicializamos la app
 app.listen(port,()=>{
     console.log(`Example app listening on port ${port}`)
