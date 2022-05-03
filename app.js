@@ -7,6 +7,7 @@ const port = 3000
 
 //routes
 //Methods HTTP
+//ESTO ES MI ENDPOINT
 app.get('/v1/explorers/',(req, res) =>{
     console.log(`GET EXPLORERS V1 API ${new Date()}`)
     const explorer1 = {id: 1, name: "Lis1"}
@@ -19,6 +20,13 @@ app.get('/v1/explorers/',(req, res) =>{
     res.status(200).json(explorers)//nos indicara el error que tiene
 })
 
+//endoint para regresar un elemento
+app.get('/v1/explorers/:id',(req, res) =>{
+    console.log(`Api explorers GET request ${new Date()}`)
+    console.log(`Getting explorer with id ${req.params.id}`)
+    const explorer = {id: 1, name: "Lis"}
+    res.status(200).json(explorer)
+})
 //con sto inicializamos la app
 app.listen(port,()=>{
     console.log(`Example app listening on port ${port}`)
